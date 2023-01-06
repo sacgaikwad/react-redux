@@ -1,6 +1,10 @@
+import { List } from "components/List/List";
+import { ExpenseInput } from "containers/ExpenseInput/ExpenseInput";
 import s from "./style.module.css";
 
 export function App() {
+  function expenseList() {}
+
   return (
     <div className={s.main_container}>
       <div className={`row ${s.header}`}>
@@ -8,9 +12,11 @@ export function App() {
         <div className={`col-9 ${s.income_input}`}>Income input</div>
       </div>
       <div className={`row ${s.workspace}`}>
-        <div className={`col-12  ${s.expense_input}`}>Expense Input</div>
+        <div className={`col-12  ${s.expense_input}`}>
+          <ExpenseInput />
+        </div>
         <div className={`col-11 col-md-6 col-lg-4 ${s.expense_list}`}>
-          Expense History
+          <List items={[{ name: "apple", price: 1 }]} />
           <div className={`col-12 ${s.expense_total}`}>My ExpenseTotal</div>
         </div>
       </div>
